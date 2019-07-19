@@ -11,9 +11,6 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-#import pymysql
-
-#pymysql.install_as_MySQLdb()
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -26,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'x4wp(_2rqz11k)v@^&th!2$spamsiuz=t=a=bjg70(l0@34sl5'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'moa1520.pythonanywhere.com']
 
@@ -79,12 +76,8 @@ WSGI_APPLICATION = 'cvlecture_site.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'moa1520$moa1520',
-        'USER': 'moa1520',
-        'PASSWORD': 'kang1318',
-        'HOST': 'moa1520.mysql.pythonanywhere-services.com',
-        'PORT': ''
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
@@ -130,5 +123,5 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-MEDIA_ROOT_URL = '/home/moa1520/cvlecture_opencv_webapp'
+MEDIA_ROOT_URL = '.'
 
